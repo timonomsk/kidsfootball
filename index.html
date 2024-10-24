@@ -8,23 +8,152 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-
-    <table id="league" class="table table-striped table-hover table-sm" style="width: 100%"></table>
-
+<table id="league" class="table table-striped table-hover table-sm" style="width: 100%"></table>
+<p><b>Goals For</b> - Kolik gólů jsme dali</p>
+<p><b>Goals Against</b> - Kolik gólů jsme dostali</p>
+<p><b>Goals Diff</b> - Rozdíl gólů</p>
+<p><b>Goals Avg PerGame</b> - Průměr gólů na zápas</p>
+<p><b>Goals Against Avg PerGame</b> - Průměr obdržených gólů na zápas</p>
+<p><b>Points</b> - Body</p>
+<p><b>Form</b> - Poslední výsledky</p>
+<p><b>Form Home</b> - Poslední výsledky doma</p>
+<p><b>Form Away</b> - Poslední výsledky venku</p>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
 <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script>
+
     let jsonData = [
-        {"Name":"SK Hostivař","total_games":10,"won":9,"lost":1,"draw":0,"goals_for":298,"goals_for_pg":29,"goals_against":185,"goals_against_pg":18,"goals_diff":113,"points":27,"game_form":"+++++-++++","game_form_home":"+++-+","game_form_away":"+++++"},
-        {"Name":"SC XAVEROV HORNÍ POČERNICE, z.s.","total_games":8,"won":5,"lost":3,"draw":0,"goals_for":206,"goals_for_pg":25,"goals_against":178,"goals_against_pg":22,"goals_diff":28,"points":15,"game_form":"-+++-+-+","game_form_home":"+-","game_form_away":"-++-++"},
-        {"Name":"Sportovní klub Dolní Chabry, z.s.","total_games":9,"won":1,"lost":8,"draw":0,"goals_for":123,"goals_for_pg":13,"goals_against":303,"goals_against_pg":33,"goals_diff":-180,"points":3,"game_form":"-----+---","game_form_home":"---+--","game_form_away":"---"},
-        {"Name":"FK Klánovice, z.s.","total_games":9,"won":4,"lost":5,"draw":0,"goals_for":173,"goals_for_pg":19,"goals_against":176,"goals_against_pg":19,"goals_diff":-3,"points":12,"game_form":"+-++-+---","game_form_home":"-+--","game_form_away":"++-+-"},
-        {"Name":"FK Loko Praha, z.s.","total_games":8,"won":5,"lost":3,"draw":0,"goals_for":235,"goals_for_pg":29,"goals_against":153,"goals_against_pg":19,"goals_diff":82,"points":15,"game_form":"+-++++--","game_form_home":"+-++-","game_form_away":"++-"},
-        {"Name":"Sportovní klub Horní Měcholupy z.s.","total_games":9,"won":2,"lost":7,"draw":0,"goals_for":211,"goals_for_pg":23,"goals_against":239,"goals_against_pg":26,"goals_diff":-28,"points":6,"game_form":"-+-----+-","game_form_home":"---+","game_form_away":"-+---"},
-        {"Name":"SK Junior Praha 1960, z.s.","total_games":9,"won":7,"lost":2,"draw":0,"goals_for":201,"goals_for_pg":22,"goals_against":163,"goals_against_pg":18,"goals_diff":38,"points":21,"game_form":"++--+++++","game_form_home":"++-++","game_form_away":"-+++"},
-        {"Name":"Sportovní klub Libuš 838, z.s.","total_games":10,"won":3,"lost":7,"draw":0,"goals_for":206,"goals_for_pg":20,"goals_against":256,"goals_against_pg":25,"goals_diff":-50,"points":9,"game_form":"--+-----++","game_form_home":"----+","game_form_away":"-+--+"}]
+            {
+                "Name": "SK Junior Praha 1960, z.s.",
+                "total_games": 10,
+                "won": 8,
+                "lost": 2,
+                "draw": 0,
+                "goals_for": 238,
+                "goals_for_pg": 23,
+                "goals_against": 177,
+                "goals_against_pg": 17,
+                "goals_diff": 61,
+                "points": 24,
+                "game_form": "++--++++++",
+                "game_form_home": "+-+++",
+                "game_form_away": "+-+++"
+            },
+            {
+                "Name": "Sportovní klub Libuš 838, z.s.",
+                "total_games": 11,
+                "won": 3,
+                "lost": 8,
+                "draw": 0,
+                "goals_for": 220,
+                "goals_for_pg": 20,
+                "goals_against": 293,
+                "goals_against_pg": 26,
+                "goals_diff": -73,
+                "points": 9,
+                "game_form": "-+-+--+----",
+                "game_form_home": "---+--",
+                "game_form_away": "-++--"
+            },
+            {
+                "Name": "Sportovní klub Dolní Chabry, z.s.",
+                "total_games": 9,
+                "won": 1,
+                "lost": 8,
+                "draw": 0,
+                "goals_for": 123,
+                "goals_for_pg": 13,
+                "goals_against": 303,
+                "goals_against_pg": 33,
+                "goals_diff": -180,
+                "points": 3,
+                "game_form": "-------+-",
+                "game_form_home": "----+-",
+                "game_form_away": "---"
+            },
+            {
+                "Name": "FK Klánovice, z.s.",
+                "total_games": 9,
+                "won": 4,
+                "lost": 5,
+                "draw": 0,
+                "goals_for": 173,
+                "goals_for_pg": 19,
+                "goals_against": 176,
+                "goals_against_pg": 19,
+                "goals_diff": -3,
+                "points": 12,
+                "game_form": "+--++--+-",
+                "game_form_home": "--+-",
+                "game_form_away": "++--+"
+            },
+            {
+                "Name": "FK Loko Praha, z.s.",
+                "total_games": 8,
+                "won": 5,
+                "lost": 3,
+                "draw": 0,
+                "goals_for": 235,
+                "goals_for_pg": 29,
+                "goals_against": 153,
+                "goals_against_pg": 19,
+                "goals_diff": 82,
+                "points": 15,
+                "game_form": "+--+-+++",
+                "game_form_home": "+--++",
+                "game_form_away": "+-+"
+            },
+            {
+                "Name": "Sportovní klub Horní Měcholupy z.s.",
+                "total_games": 9,
+                "won": 2,
+                "lost": 7,
+                "draw": 0,
+                "goals_for": 211,
+                "goals_for_pg": 23,
+                "goals_against": 239,
+                "goals_against_pg": 26,
+                "goals_diff": -28,
+                "points": 6,
+                "game_form": "-+-+-----",
+                "game_form_home": "+---",
+                "game_form_away": "-+---"
+            },
+            {
+                "Name": "SK Hostivař",
+                "total_games": 10,
+                "won": 9,
+                "lost": 1,
+                "draw": 0,
+                "goals_for": 298,
+                "goals_for_pg": 29,
+                "goals_against": 185,
+                "goals_against_pg": 18,
+                "goals_diff": 113,
+                "points": 27,
+                "game_form": "++++++++-+",
+                "game_form_home": "++++-",
+                "game_form_away": "+++++"
+            },
+            {
+                "Name": "SC XAVEROV HORNÍ POČERNICE, z.s.",
+                "total_games": 8,
+                "won": 5,
+                "lost": 3,
+                "draw": 0,
+                "goals_for": 206,
+                "goals_for_pg": 25,
+                "goals_against": 178,
+                "goals_against_pg": 22,
+                "goals_diff": 28,
+                "points": 15,
+                "game_form": "--++++-+",
+                "game_form_home": "-+",
+                "game_form_away": "-+++-+"
+            }
+        ]
     ;
 
     new DataTable('#league', {
