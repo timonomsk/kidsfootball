@@ -37,7 +37,6 @@
     $(document).ready(function(){
         $('[data-bs-toggle="tooltip"]').tooltip();
     });
-
     let jsonData = [
             {
                 "Name": "Sportovní klub Horní Měcholupy z.s.",
@@ -191,11 +190,11 @@
                     if (type === 'display') {
                         return data.split(';').map((s) => {
                             if (s.at(0) === '+') {
-                                return '<a href="#" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"><i class="bi bi-shield-plus" style="color: green;"></i></a>'
+                                return '<i class="bi bi-shield-plus" style="color: green;" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"></i>'
                             } else if (s.at(0) === '-') {
-                                return '<a href="#" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"><i class="bi bi-shield-minus" style="color: red;"></i></a>'
+                                return '<i class="bi bi-shield-minus" style="color: red;"  data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"></i>'
                             } else if (s.at(0) === '0') {
-                                return '<a href="#" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"><i class="bi bi-shield-shaded" style="color: yellow;"></i></a>'
+                                return '<i class="bi bi-shield-shaded" style="color: yellow;" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"></i>'
                             }
                         }).join('')
                     }
@@ -211,11 +210,11 @@
 
                         return data.split(';').map((s) => {
                             if (s.at(0) === '+') {
-                                return '<a href="#" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"><i class="bi bi-shield-plus" style="color: green;"></i></a>'
+                                return '<i class="bi bi-shield-plus" style="color: green;" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"></i>'
                             } else if (s.at(0) === '-') {
-                                return '<a href="#" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"><i class="bi bi-shield-minus" style="color: red;"></i></a>'
+                                return '<i class="bi bi-shield-minus" style="color: red;" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"></i>'
                             } else if (s.at(0) === '0') {
-                                return '<a href="#" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"><i class="bi bi-shield-shaded" style="color: yellow;"></i></a>'
+                                return '<i class="bi bi-shield-shaded" style="color: yellow;" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"></i>'
                             }
                         }).join('')
                     }
@@ -229,11 +228,11 @@
                     if (type === 'display') {
                         return data.split(';').map((s) => {
                             if (s.at(0) === '+') {
-                                return '<a href="#" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"><i class="bi bi-shield-plus" style="color: green;"></i></a>'
+                                return '<i class="bi bi-shield-plus" style="color: green;" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"></i>'
                             } else if (s.at(0) === '-') {
-                                return '<a href="#" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"><i class="bi bi-shield-minus" style="color: red;"></i></a>'
+                                return '<i class="bi bi-shield-minus" style="color: red;" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"></i>'
                             } else if (s.at(0) === '0') {
-                                return '<a href="#" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"><i class="bi bi-shield-shaded" style="color: yellow;"></i></a>'
+                                return '<i class="bi bi-shield-shaded" style="color: yellow;" data-bs-toggle="tooltip" data-bs-title="' + s.substring(1) + '"></i>'
                             }
                         }).join('')
                     }
