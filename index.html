@@ -189,6 +189,12 @@
         paging: false,
         searching: false,
         info: false,
+        order: [[10, "desc"]],
+        createdRow: function (row, data, dataIndex) {
+            if (data.Name === 'SK Junior Praha 1960, z.s.') {
+                $(row).addClass('table-success')
+            }
+        },
         columns: [
             {title: "Name", data: "Name"},
             {title: "Total games", data: "total_games"},
@@ -265,6 +271,12 @@
         paging: false,
         searching: false,
         info: false,
+        order: [[5, "desc"]],
+        createdRow: function (row, data, dataIndex) {
+            if (data.Name === 'SK Junior Praha 1960, z.s.') {
+                $(row).addClass('table-success')
+            }
+        },
         columns: [
             {title: "Name", data: "Name"},
             {title: "Total games", data: "total_games"},
